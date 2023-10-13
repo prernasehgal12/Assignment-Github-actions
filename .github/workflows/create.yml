@@ -1,4 +1,4 @@
-name: Terraform Apply and Destroy
+name: Terraform Apply
 
 on:
   push:
@@ -32,8 +32,7 @@ jobs:
     - name: Apply Terraform
       run: terraform apply -auto-approve
 
-    - name: Destroy Terraform
-      run: terraform destroy -auto-approve
+  
     
 
 
