@@ -1,4 +1,4 @@
-name: Terraform Apply and Destroy
+name: Terraform Destroy
 
 on:
   push:
@@ -17,5 +17,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Destroy Terraform
+      run: terraform destroy -auto-approve
 
     
