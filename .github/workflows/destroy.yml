@@ -6,15 +6,15 @@ name: Terraform Destroy
   #   workflows: ["Terraform Apply"]
   #   types:
   #     - completed  
-on:
-  workflow_dispatch:
-    inputs:
-      instance_id:
-        description: 'EC2 Instance ID'
-        required: true
-  push:
-    branches:
-      - main # Adjust this to the branch where your code resides
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       instance_id:
+#         description: 'EC2 Instance ID'
+#         required: true
+#   push:
+#     branches:
+#       - main # Adjust this to the branch where your code resides
 
 jobs:
  terraform-destroy:
