@@ -1,16 +1,20 @@
 name: Terraform Destroy
 # on:
 #  workflow_dispatch:
-on:
+# on:
   # workflow_run:
   #   workflows: ["Terraform Apply"]
   #   types:
-  #     - completed
+  #     - completed  
+on:
   workflow_dispatch:
     inputs:
-      destroy:
-        description: 'Destroy the EC2 instance'
+      instance_id:
+        description: 'EC2 Instance ID'
         required: true
+  push:
+    branches:
+      - main # Adjust this to the branch where your code resides
 
 jobs:
  terraform-destroy:
@@ -53,8 +57,11 @@ jobs:
       # - name: Terraform Init
       #   run: terraform init 
         
-      - name: Show Destroy plan
-        run: terraform plan -destroy
+      # - name: Show Destroy plan
+      #   if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+      #   run: terraform plan -destroy
     
       - name: Terraform destroy
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
         run: terraform destroy -auto-approve
+        
