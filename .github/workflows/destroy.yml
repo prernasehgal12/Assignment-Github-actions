@@ -2,10 +2,10 @@ name: Terraform Destroy
 # on:
 #  workflow_dispatch:
 on:
-  workflow_run:
-    workflows: ["Terraform Apply"]
-    types:
-      - completed
+  # workflow_run:
+  #   workflows: ["Terraform Apply"]
+  #   types:
+  #     - completed
   workflow_dispatch:
     inputs:
       destroy:
