@@ -1,6 +1,16 @@
 name: Terraform Destroy
+# on:
+#  workflow_dispatch:
 on:
- workflow_dispatch:
+  workflow_run:
+    workflows: ["Terraform Apply"]
+    types:
+      - completed
+  workflow_dispatch:
+    inputs:
+      destroy:
+        description: 'Destroy the EC2 instance'
+        required: true
 
 jobs:
  terraform-destroy:
