@@ -1,4 +1,4 @@
-name: Terraform Apply
+name: Terraform
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   terraform-apply:
-    name: "Terraform Apply"
+    # name: "Terraform Apply"
     # runs-on: ubuntu-latest
     runs-on: self-hosted
     env:
