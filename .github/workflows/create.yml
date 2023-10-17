@@ -31,8 +31,8 @@ jobs:
       with:
         terraform_version: 1.0.0 # Replace with your desired Terraform version
 
-    - name: Initialize Terraform
-      run: terraform init
+    # - name: Initialize Terraform
+    #   run: terraform init
 
     # - name: Plan Terraform
     #   run: terraform plan 
