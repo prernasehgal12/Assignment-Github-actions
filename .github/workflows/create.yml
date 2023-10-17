@@ -1,7 +1,7 @@
 name: Terraform
 
 on:
-  push:
+  push: 
     branches: 
       - main # Replace with the branch you want to trigger the workflow on
 
